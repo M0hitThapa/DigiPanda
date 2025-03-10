@@ -2,7 +2,7 @@
 
 import { PRODUCT_CATRGORIES } from "@/config"
 import { Button } from "./ui/button"
-import { ChevronDown } from "lucide-react"
+import { SquareArrowDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
@@ -19,8 +19,8 @@ interface NavItemProps {
 const NavItem = ({isAnyOpen, category, handleOpen, isOpen}: NavItemProps) => {
     return <div className="flex">
         <div className="relative flex items-center">
-            <Button onClick={handleOpen} className="gap-1.5" variant={isOpen ? "secondary":"ghost"}>{category.label}
-                <ChevronDown className={cn("h-4 w-4 transition-all text-muted-foreground", {
+            <Button onClick={handleOpen} className="gap-1.5 bg-orange-50 hover:bg-orange-100 cursor-pointer" variant={isOpen ? "secondary":"ghost" }>{category.label}
+                <SquareArrowDown className={cn("h-4 w-4 transition-all text-muted-foreground", {
                     "-rotate-180": isOpen,
                 })} />
             </Button>
@@ -31,8 +31,8 @@ const NavItem = ({isAnyOpen, category, handleOpen, isOpen}: NavItemProps) => {
                 "animate-in fade-in-10 slide-in-from-top-5":!isAnyOpen,
             })}>
                 <div className="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
-                <div className="relative bg-orange-50">
-                    <div className="mx-auto max-w-5xl px-8">
+                <div className="relative bg-orange-50 ">
+                    <div className="mx-auto max-w-5xl px-6">
                         <div className="grid grid-cols-4 gap-x-6 gap-y-6 py-15">
                             <div className="col-span-4 col-start-1 grid grid-cols-3 gap-x-6">
                                 {category.featured.map((item) => (

@@ -30,8 +30,8 @@ export default function Home() {
       <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Your marketplace for premium digital assets{' '}<span className="text-orange-500">with exceptional quality.</span></h1>
       <p className="mt-6 text-lg max-w-prose text-muted-foreground">Welcome to DigiPanda. Our team carefully verifies every asset to maintain top-quality standards.</p>
       <div className="flex flex-col sm:flex-row gap-4 mt-6">
-      <Link href='/products' className={buttonVariants()}  >Browse Latest Product</Link>
-      <Button variant={"ghost"} className="hover:bg-orange-200">Our quality guarantee &rarr;</Button>
+      <Link href='/products' className={`${buttonVariants({variant:"outline",})} bg-orange-600 text-2xl  text-white hover:bg-orange-600/90  hover:text-white`}  >Browse Latest Product</Link>
+      <Button variant={"ghost"} className="hover:bg-orange-200 cursor-pointer">Our quality guarantee &rarr;</Button>
       </div>
     </div>
     {/*todo list */}

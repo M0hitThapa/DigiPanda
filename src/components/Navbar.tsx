@@ -33,12 +33,19 @@ const Navbar = () => {
                             <div className="ml-auto flex items-center">
 
                                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                                    {user ? null :( <Link href="/sign-in" className={buttonVariants({variant:'default',})}>
-                                    Sign in</Link>)}
+                                {user ? null : (
+  <Link
+    href="/sign-in"
+    className={`${buttonVariants({ variant: 'outline' })} px-4 py-2 border bg-orange-50 border-gray-500  text-gray-700 hover:bg-orange-100 transition`}
+  >
+    Sign in
+  </Link>
+)}
+
 
                                     {user ? null:( <span className="h-6 w-px bg-gray-200" aria-hidden='true'></span> )}
 
-                                    {user ? <p></p> : (<Link href='/sign-up' className={buttonVariants({variant:"default",})}>Create account</Link>)}
+                                    {user ? <p></p> : (<Link href='/sign-up' className={`${buttonVariants({variant:"outline",})} bg-orange-50 border-gray-500  text-gray-700 hover:bg-orange-100`}>Create account</Link>)}
 
                                     {user ? <span className="h-6 w-px bg-gray-200" aria-hidden='true'></span>: null}
 
