@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
+import Providers from "@/components/Providers";
 
 
 
@@ -22,8 +23,10 @@ export default function RootLayout({
         className={cn("relative h-full font-sans antialiased")}
       >
         <main className="relative flex flex-col min-h-screen">
+          <Providers>
           <Navbar />
         <div className="flex-grow flex-1">{children}</div>
+        </Providers>
         </main>
       </body>
     </html>
