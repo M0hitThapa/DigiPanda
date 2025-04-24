@@ -15,13 +15,16 @@ import { trpc } from "@/trpc/client";
 const Page = () => {
 
 
-    const { register, handleSubmit, formState: {errors}, } = useForm<TAuthCredentuialsValidator>({resolver: zodResolver(AuthCredentialsValidator)})
+    const { register, handleSubmit, formState: {errors}, } = useForm<TAuthCredentuialsValidator>({resolver: zodResolver(AuthCredentialsValidator),})
 
-    const { data } = trpc.anyApiRoute.useQuery()
-    console.log(data)
+    // const { data } = trpc.anyApiRoute.useQuery()
+    // console.log(data)
+    const {mutate, isLoading} = trpc.auth.createPayloadUser.useMutation({
+
+    })
 
     const onSubmit = ({email,password,} :TAuthCredentuialsValidator) => {
-
+mutate({email, password})
     }
 return <>
 <div className="container relative fkex pt-20 flex-col justify-center lg:px-0 ">

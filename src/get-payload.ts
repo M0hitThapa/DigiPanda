@@ -45,4 +45,5 @@ try {
     cached.promise = null
     throw e
 }
+return cached.client
 }
